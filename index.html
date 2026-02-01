@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Care • Medication Tracker</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        :root {
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --accent: #ec4899;
+            --text: #111827;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 12px 32px rgba(79,70,229,0.15);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(145deg, #fdfcfc 0%, #f7f9fc 100%);
+            min-height: 100vh;
+            color: var(--text);
+            padding: 16px 12px 40px;
+            line-height: 1.45;
+        }
+
+        .container { max-width: 460px; margin: 0 auto; }
+
+        .quran-ayah {
+            margin-top: 18px;
+            text-align: center;
+            font-family: 'Amiri', serif;
+            font-size: 1.45rem;
+            line-height: 2.1;
+            color: #374151;
+            direction: rtl;
+        }
+
+        .quran-ayah .ayah-text {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .quran-ayah .ayah-ref {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            font-family: 'Inter', sans-serif;
+        }
+
+
+        .header { text-align: center; margin: 12px 0 32px; }
+
+        .app-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+        }
+
+        .subtitle { font-size: 1.05rem; color: var(--text-light); margin-top: 4px; font-weight: 400; }
+
+        .date-selector {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px 18px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .date-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .day-counter {
+            background: #e8f0fe;
+            color: #1e40af;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .date-nav { display: flex; gap: 10px; align-items: center; }
+
+        .nav-btn {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--primary); color: white; border: none;
+            font-size: 1.4rem; display: grid; place-items: center;
+            cursor: pointer; transition: all 0.18s;
+        }
+
+        .nav-btn:hover { background: var(--primary-dark); transform: scale(1.06); }
+
+        .date-input {
+            flex: 1; padding: 12px 16px;
+            border: 1px solid #d1dbe7; border-radius: 12px;
+            font-size: 1rem; color: var(--text);
+        }
+
+        .medication-list { margin-bottom: 32px; }
+
+        .medication-card {
+            background: var(--card); border-radius: 16px;
+            padding: 20px 18px; margin-bottom: 16px;
+            box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .medication-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        .med-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+
+        .med-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem; font-weight: 500; color: var(--text);
+        }
+
+        .med-time {
+            background: #fef3f2; color: #c14d4d;
+            padding: 6px 12px; border-radius: 20px;
+            font-size: 0.92rem; font-weight: 500;
+        }
+
+        .med-dosage { color: #4b5563; font-size: 1.05rem; margin: 8px 0 14px; font-weight: 400; }
+
+        .checkbox-container {
+            display: flex; align-items: center; gap: 12px;
+            user-select: none; cursor: pointer; font-size: 1rem; color: #4b5563;
+        }
+
+        .checkbox {
+            width: 26px; height: 26px; border: 2.5px solid var(--primary);
+            border-radius: 8px; display: grid; place-items: center; transition: all 0.18s;
+        }
+
+        .checkbox.checked { background: #10b981; border-color: #10b981; }
+
+        .checkbox.checked::after { content: '✔'; color: white; font-size: 1.1rem; font-weight: bold; }
+
+        .action-buttons {
+            display: flex; flex-direction: column; gap: 12px; margin: 32px 0 40px;
+        }
+
+        .btn {
+            padding: 16px; border: none; border-radius: 12px;
+            font-size: 1.05rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white; box-shadow: 0 4px 14px rgba(95,125,149,0.25);
+        }
+
+        .btn.primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(95,125,149,0.3); }
+
+        .btn.secondary { background: #f1f5f9; color: #334155; }
+
+        .btn.secondary:hover { background: #e2e8f0; }
+
+        .love-note {
+            text-align: center; font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem; color: #5b647a; font-style: italic;
+            line-height: 1.6; margin-top: 20px; padding: 0 20px;
+        }
+
+        .love-note span { color: #c14d4d; font-size: 1.3rem; }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000; align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+
+        .modal-content {
+            background: white; border-radius: 20px; width: 92%; max-width: 520px;
+            max-height: 94vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            padding: 24px;
+        }
+
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+        .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--text); }
+
+        .close-btn { background: none; border: none; font-size: 1.8rem; color: var(--text-light); cursor: pointer; }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-label { display: block; margin-bottom: 6px; font-size: 0.95rem; font-weight: 500; color: var(--text); }
+
+        .form-input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font-size: 1rem; }
+
+        .medication-item { background: #f8fafc; padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+
+        .medication-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+
+        .remove-btn {
+            background: #ef4444; border: none; width: 32px; height: 32px;
+            border-radius: 50%; color: white; cursor: pointer; font-size: 1.2rem;
+        }
+
+        .add-med-btn, .save-btn {
+            width: 100%; padding: 14px; border: none; border-radius: 12px;
+            font-size: 1rem; cursor: pointer; margin-top: 12px;
+        }
+
+        .add-med-btn { background: var(--primary); color: white; }
+
+        .save-btn { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+
+        .no-medication { text-align: center; padding: 40px 20px; color: var(--text-light); font-style: italic; font-size: 1.1rem; }
+
+        @media (min-width: 500px) { body { padding: 32px 20px; } .container { max-width: 480px; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 class="app-title">Daily Care</h1>
+        <div class="subtitle">Medication Tracker</div>
+    </div>
+
+    <div class="date-selector">
+        <div class="date-display">
+            <div class="current-date" id="currentDate"></div>
+            <div class="day-counter" id="dayCounter"></div>
+        </div>
+        <div class="date-nav">
+            <button class="nav-btn" onclick="changeDate(-1)">←</button>
+            <input type="date" class="date-input" id="dateInput" onchange="updateDate()">
+            <button class="nav-btn" onclick="changeDate(1)">→</button>
+        </div>
+    </div>
+
+    <div class="medication-list" id="medicationList"></div>
+
+    <div class="action-buttons">
+        <button class="btn primary" onclick="openEditModal()">Edit Day</button>
+        <div style="display:flex; gap:12px;">
+            <button class="btn secondary" style="flex:1" onclick="openCalendarView()">Calendar View</button>
+            <button class="btn secondary" style="flex:1" onclick="exportReminder()">Export Day</button>
+        </div>
+    </div>
+
+    <div class="love-note">
+    Every dose is a step towards feeling better.<br>
+    I'm here with you, always. <span>♥</span>
+
+    <div class="quran-ayah">
+        <span class="ayah-text">
+            وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ
+        </span>
+        <span class="ayah-ref">
+            — Qur’an 26:80
+        </span>
+    </div>
+</div>
+
+    <!-- <div class="love-note">
+        Every dose is a step towards feeling better.<br>
+        I'm here with you, always. <span>♥</span>
+    </div>
+</div> -->
+
+<!-- Edit Modal -->
+<div class="modal" id="editModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title">Edit Medications for this Day</div>
+            <button class="close-btn" onclick="closeEditModal()">×</button>
+        </div>
+        <div id="medicationForm"></div>
+        <button class="add-med-btn" onclick="addMedicationField()">+ Add Medication</button>
+        <button class="save-btn" onclick="saveMedications()">Save Changes</button>
+    </div>
+</div>
+
+<!-- Calendar Modal -->
+<div class="modal" id="calendarModal">
+    <div class="modal-content" style="max-width:95%; max-height:95vh; padding:20px;">
+        <div class="modal-header">
+            <div class="modal-title">January & February 2026 Medication Calendar</div>
+            <button class="close-btn" onclick="closeCalendarView()">×</button>
+        </div>
+        <div style="margin: 16px 0;">
+            <button class="save-btn" onclick="exportCalendarHighRes()">Export Calendar (A4 Landscape 600 dpi PNG)</button>
+        </div>
+        <div id="calendarContainer"></div>
+    </div>
+</div>
+
+<canvas id="reminderCanvas" style="position:absolute;left:-9999px;"></canvas>
+<canvas id="calendarCanvas" style="position:absolute;left:-9999px;"></canvas>
+
+<script>
+// ───────────────────────────────────────────────
+// Core data & helpers
+// ───────────────────────────────────────────────
+
+// const DAY_ONE_DATE = new Date('2026-01-31');
+const DAY_ONE_DATE = new Date(2026, 0, 31); // January is 0
+let currentDate = new Date('2026-02-01');
+let medicationData = JSON.parse(localStorage.getItem('medicationData')) || {};
+// localStorage.removeItem('medicationData');   // ← add this line only once
+
+// Pre-fill
+if (Object.keys(medicationData).length === 0) {
+    console.log('Pre-filling medication schedule...');
+    
+    let pdSDate = null;
+
+    for (let day = 1; day <= 60; day++) {
+        // const date = new Date('2026-01-31');
+        const date = new Date(2026, 0, 31);
+        date.setDate(date.getDate() + day - 1);
+        const dateKey = date.toISOString().split('T')[0];
+        const meds = [];
+        
+        meds.push({ name: 'Maxinion', dosage: '30mg', time: '8PM' });
+        
+        if (day <= 3) {
+            meds.push({ name: 'Brotin', dosage: '½ tab', time: '8PM' });
+        } else if (day <= 6) {
+            meds.push({ name: 'Brotin', dosage: '½ tab', time: '10AM' });
+            meds.push({ name: 'Brotin', dosage: '½ tab', time: '8PM' });
+        } else if (day <= 9) {
+            meds.push({ name: 'Brotin', dosage: '½ tab', time: '10AM' });
+            meds.push({ name: 'Brotin', dosage: '1 tab', time: '8PM' });
+        } else {
+            meds.push({ name: 'Brotin', dosage: '1 tab', time: '5AM' });
+            meds.push({ name: 'Brotin', dosage: '1 tab', time: '10AM' });
+            meds.push({ name: 'Brotin', dosage: '1 tab', time: '8PM' });
+        }
+        
+        meds.push({ name: 'Aldactone', dosage: '½ tab = 50mg', time: '8PM' });
+
+        // Mark PD-S day
+        if (dateKey === '2026-02-03') {
+            pdSDate = date;
+        }
+
+        // Diane-35 starts on Day 3 from PD-S (PD-S + 3 days), for 21 days
+        if (pdSDate) {
+            const dianeStart = new Date(pdSDate);
+            dianeStart.setDate(dianeStart.getDate() + 2); // PD-S + 3 days
+
+            const dianeEnd = new Date(dianeStart);
+            dianeEnd.setDate(dianeEnd.getDate() + 20); // 21 days total
+
+            if (date >= dianeStart && date <= dianeEnd) {
+                meds.push({ name: 'Diane-35', dosage: '1 tab', time: '8PM' });
+            }
+        }
+
+        medicationData[dateKey] = meds;
+    }
+    
+    localStorage.setItem('medicationData', JSON.stringify(medicationData));
+    console.log('Medication schedule pre-filled for 60 days!');
+}
+
+const medicationOptions = {
+    'Maxinion':   { dosages: ['30mg', '10mg'], times: ['8PM'] },
+    'Brotin':     { dosages: ['½ tab', '1 tab'], times: ['8PM', '10AM', '5AM'] },
+    'Aldactone':  { dosages: ['½ tab = 50mg'], times: ['8PM'] },
+    'Diane-35':   { dosages: ['1 tab'], times: ['8PM'] }
+};
+
+document.getElementById('dateInput').valueAsDate = currentDate;
+
+function getDayNumber(date) {
+    const diffMs = date - DAY_ONE_DATE;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const dayNum = diffDays + 1;
+    console.log(date.toISOString().split('T')[0], '→ Day', dayNum);
+    return dayNum;
+}
+
+// function getDateKey(date) { 
+//     return date.toISOString().split('T')[0]; 
+// }
+
+function getDateKey(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+
+function getMedicationsForDay(date) {
+    return medicationData[getDateKey(date)] || [];
+}
+
+function updateDisplay() {
+    document.getElementById('currentDate').textContent = currentDate.toLocaleDateString('en-US', {
+        weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+    });
+    document.getElementById('dayCounter').textContent = `Day ${getDayNumber(currentDate)}`;
+
+    const meds = getMedicationsForDay(currentDate);
+    const listEl = document.getElementById('medicationList');
+    listEl.innerHTML = meds.length === 0
+        ? '<div class="no-medication">No medications scheduled for today.</div>'
+        : meds.map((med, i) => `
+            <div class="medication-card">
+                <div class="med-header">
+                    <div class="med-name">${med.name}</div>
+                    <div class="med-time">${med.time}</div>
+                </div>
+                <div class="med-dosage">${med.dosage}</div>
+                <div class="checkbox-container" onclick="toggleTaken(${i})">
+                    <div class="checkbox ${med.taken ? 'checked' : ''}"></div>
+                    <span>Mark as taken</span>
+                </div>
+            </div>
+        `).join('');
+}
+
+function toggleTaken(index) {
+    const key = getDateKey(currentDate);
+    if (!medicationData[key]) return;
+    medicationData[key][index].taken = !medicationData[key][index].taken;
+    localStorage.setItem('medicationData', JSON.stringify(medicationData));
+    updateDisplay();
+}
+
+function changeDate(delta) {
+    currentDate.setDate(currentDate.getDate() + delta);
+    document.getElementById('dateInput').valueAsDate = currentDate;
+    updateDisplay();
+}
+
+function updateDate() {
+    const val = document.getElementById('dateInput').value;
+    if (val) {
+        currentDate = new Date(val);
+        updateDisplay();
+    }
+}
+
+// ── Edit Modal ───────────────────────────────────────────────────────────
+function openEditModal() {
+    const modal = document.getElementById('editModal');
+    let meds = getMedicationsForDay(currentDate);
+    if (meds.length === 0) meds = [{ name: '', dosage: '', time: '', taken: false }];
+    renderMedicationForm(meds);
+    modal.classList.add('active');
+}
+
+function closeEditModal() { document.getElementById('editModal').classList.remove('active'); }
+
+function renderMedicationForm(medications) {
+    const form = document.getElementById('medicationForm');
+    form.innerHTML = '';
+    medications.forEach((med, index) => {
+        const item = document.createElement('div');
+        item.classList.add('medication-item');
+        item.innerHTML = `
+            <div class="medication-item-header">
+                <h4>Medication ${index + 1}</h4>
+                <button class="remove-btn" onclick="removeMedicationField(${index})">×</button>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Medication Name</label>
+                <select class="form-input" data-index="${index}" onchange="updateDosageOptions(this)">
+                    <option value="">Select Medication</option>
+                    ${Object.keys(medicationOptions).map(n => `<option value="${n}" ${med.name === n ? 'selected' : ''}>${n}</option>`).join('')}
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Dosage</label>
+                <select class="form-input" id="dosage-${index}"></select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Time</label>
+                <select class="form-input" id="time-${index}"></select>
+            </div>
+        `;
+        form.appendChild(item);
+        const select = item.querySelector('[data-index]');
+        select.value = med.name || '';
+        updateDosageOptions(select);
+        document.getElementById(`dosage-${index}`).value = med.dosage || '';
+        document.getElementById(`time-${index}`).value = med.time || '';
+    });
+}
+
+function updateDosageOptions(select) {
+    const index = select.dataset.index;
+    const name = select.value;
+    const dosageSelect = document.getElementById(`dosage-${index}`);
+    const timeSelect = document.getElementById(`time-${index}`);
+    dosageSelect.innerHTML = '<option value="">Select Dosage</option>';
+    timeSelect.innerHTML = '<option value="">Select Time</option>';
+    if (name && medicationOptions[name]) {
+        medicationOptions[name].dosages.forEach(d => dosageSelect.innerHTML += `<option value="${d}">${d}</option>`);
+        medicationOptions[name].times.forEach(t => timeSelect.innerHTML += `<option value="${t}">${t}</option>`);
+    }
+}
+
+function getCurrentFormMeds() {
+    const items = document.querySelectorAll('.medication-item');
+    const meds = [];
+    items.forEach((item, idx) => {
+        const name = item.querySelector('select[data-index]')?.value || '';
+        const dosage = document.getElementById(`dosage-${idx}`)?.value || '';
+        const time = document.getElementById(`time-${idx}`)?.value || '';
+        meds.push({ name, dosage, time, taken: false });
+    });
+    return meds;
+}
+
+function addMedicationField() {
+    const currentMeds = getCurrentFormMeds();
+    currentMeds.push({ name: '', dosage: '', time: '', taken: false });
+    renderMedicationForm(currentMeds);
+}
+
+function removeMedicationField(index) {
+    const currentMeds = getCurrentFormMeds();
+    currentMeds.splice(index, 1);
+    renderMedicationForm(currentMeds);
+}
+
+function saveMedications() {
+    const currentMeds = getCurrentFormMeds();
+    const validMeds = currentMeds.filter(m => m.name && m.dosage && m.time);
+    const key = getDateKey(currentDate);
+    if (validMeds.length > 0) medicationData[key] = validMeds;
+    else delete medicationData[key];
+    localStorage.setItem('medicationData', JSON.stringify(medicationData));
+    closeEditModal();
+    updateDisplay();
+}
+
+// ── Calendar View ────────────────────────────────────────────────────────
+function openCalendarView() {
+    const modal = document.getElementById('calendarModal');
+    const cont = document.getElementById('calendarContainer');
+    let html = '<div style="display:grid; grid-template-columns:repeat(7,1fr); gap:6px; font-size:0.9rem;">';
+    ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].forEach(d => {
+        html += `<div style="background:var(--primary);color:white;padding:8px;text-align:center;font-weight:800;font-size:18px;">${d}</div>`;
+    });
+    for(let d=1; d<=28; d++) {
+        const dt = new Date(2026,1,d);
+        const meds = getMedicationsForDay(dt);
+        html += `
+            <div onclick="goToDate('2026-02-${d.toString().padStart(2,'0')}')"
+                 style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;cursor:pointer;min-height:90px;">
+                <div><strong>${d}</strong></div>
+                <div style="color:var(--text-light);font-size:0.8rem;">Day ${getDayNumber(dt)}</div>
+                ${meds.map(m=>`<div style="font-size:0.8rem; margin-top:4px;">${m.name} • ${m.time}</div>`).join('') || '<div style="color:#94a3b8;font-style:italic;font-size:0.8rem;">—</div>'}
+            </div>`;
+    }
+    html += '</div>';
+    cont.innerHTML = html;
+    modal.classList.add('active');
+}
+
+function closeCalendarView() { document.getElementById('calendarModal').classList.remove('active'); }
+
+function goToDate(str) {
+    currentDate = new Date(str);
+    document.getElementById('dateInput').valueAsDate = currentDate;
+    closeCalendarView();
+    updateDisplay();
+}
+
+// ── High-Res Calendar Export ─────────────────────────────────────────────
+function exportCalendarHighRes() {
+    const canvas = document.getElementById('calendarCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const DPI = 600;
+    const A4_W_MM = 297, A4_H_MM = 210;
+    canvas.width  = Math.round(A4_W_MM  * DPI / 25.4);
+    canvas.height = Math.round(A4_H_MM  * DPI / 25.4);
+
+    const scale = DPI / 300;
+
+    const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    grad.addColorStop(0, '#fdfcfc');
+    grad.addColorStop(1, '#f9fbfc');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#2d3748';
+    ctx.font = `${Math.round(110*scale)}px "Playfair Display", serif`;
+    ctx.textAlign = 'center';
+        ctx.fillText('Medication Course after 29-Jan-2026', canvas.width/2, Math.round(135*scale));
+    // ctx.fillText('Nabeela\'s Medication Course', canvas.width/2, Math.round(135*scale));
+
+    ctx.fillStyle = "gray"; // Set color to blue
+    ctx.font = `${Math.round(78*scale)}px "Playfair Display", serif`;
+    ctx.fillText('February 2026', canvas.width/2, Math.round(225*scale));
+
+    const margin = Math.round(95*scale);
+    const cellW = Math.round((canvas.width - margin*2) / 7);
+    const cellH = Math.round(460*scale);   // reduced → less empty space at bottom
+    const gridTop = Math.round(320*scale);
+
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    ctx.fillStyle = '#00008B';  // dark blue
+    ctx.font = `600 ${Math.round(54*scale)}px "Inter", sans-serif`;
+    days.forEach((d,i) => {
+        ctx.fillText(d, margin + i*cellW + cellW/2, gridTop + Math.round(42*scale));
+    });
+
+    ctx.strokeStyle = '#e5e7eb';
+    ctx.lineWidth = Math.round(2.8*scale);
+
+    for (let i = 0; i <= 7; i++) {
+        ctx.beginPath();
+        ctx.moveTo(margin + i*cellW, gridTop + Math.round(70*scale));
+        ctx.lineTo(margin + i*cellW, gridTop + Math.round(70*scale) + cellH*4);
+        ctx.stroke();
+    }
+
+    for (let i = 0; i <= 4; i++) {
+        const y = gridTop + Math.round(70*scale) + i*cellH;
+        ctx.beginPath();
+        ctx.moveTo(margin, y);
+        ctx.lineTo(margin + 7*cellW, y);
+        ctx.stroke();
+    }
+
+    const medicineColors = {
+        'Maxinion':   { border: '#16a34a', badge: 'rgba(22,163,74,0.12)', text: '#166534' },
+        'Brotin':     { border: '#f59e0b', badge: 'rgba(245,158,11,0.12)', text: '#92400e' },
+        'Aldactone':  { border: '#7c3aed', badge: 'rgba(124,58,237,0.12)', text: '#5b21b6' },
+        'Diane-35':   { border: '#ec4899', badge: 'rgba(236,72,153,0.12)', text: '#be185d' },
+        'default':    { border: '#6b7280', badge: 'rgba(107,114,128,0.10)', text: '#374151' }
+    };
+
+    let col = 0;
+    let row = 0;
+
+    for (let d = 1; d <= 28; d++) {
+        const date = new Date(2026, 1, d);
+        const meds = getMedicationsForDay(date);
+        const x = margin + col * cellW;
+        const y = gridTop + Math.round(70*scale) + row * cellH;
+
+        // ───────────────────────────────────────────────
+        // ← Add the debug line RIGHT HERE (before drawing "Day X")
+        console.log('Exporting date:', date.toISOString().split('T')[0], '→ calculated Day:', getDayNumber(date));
+        // ───────────────────────────────────────────────
+
+        ctx.fillStyle = '#1f2937';
+        ctx.font = `700 ${Math.round(54*scale)}px "Montserrat", sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText(d, x + cellW/2, y + Math.round(78*scale));
+
+        ctx.fillStyle = '#6b7280';
+        ctx.font = `${Math.round(30*scale)}px "Montserrat", sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.fillText(`Day ${getDayNumber(date)}`, x + cellW/2, y + Math.round(115*scale));
+
+        if (d === 3) {
+            ctx.fillStyle = '#e11d48';
+            ctx.font = `italic 500 ${Math.round(34*scale)}px "Playfair Display", serif`;
+            ctx.textAlign = 'right';
+            ctx.fillText('PD-S', x + cellW - Math.round(22*scale), y + Math.round(48*scale));
+        }
+
+        let medY = y + Math.round(140*scale);  // start meds a bit higher
+
+        if (meds.length === 0) {
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = `italic ${Math.round(28*scale)}px "Playfair Display", serif`;
+            ctx.textAlign = 'center';
+            ctx.fillText('—', x + cellW/2, medY + Math.round(10*scale));
+        } else {
+            meds.forEach(med => {
+                if (medY > y + cellH - Math.round(70*scale)) return;
+
+                const c = medicineColors[med.name] || medicineColors.default;
+
+                ctx.fillStyle = c.border;
+                ctx.fillRect(x + Math.round(20*scale), medY - Math.round(18*scale), Math.round(6*scale), Math.round(50*scale));
+
+                ctx.strokeStyle = c.border;
+                ctx.lineWidth = Math.round(3*scale);
+                ctx.strokeRect(x + Math.round(34*scale), medY - Math.round(16*scale), Math.round(30*scale), Math.round(30*scale));
+
+                // Draw checkmark if medication was taken
+                if (med.taken) {
+                    const boxX = x + Math.round(34*scale);
+                    const boxY = medY - Math.round(16*scale);
+                    const boxSize = Math.round(30*scale);
+
+                    ctx.fillStyle = '#16a34a';
+                    ctx.font = `bold ${Math.round(28*scale)}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('✔', boxX + boxSize/2, boxY + boxSize/2);
+                }
+
+
+
+                ctx.fillStyle = c.text;
+                ctx.font = `600 ${Math.round(30*scale)}px "Montserrat", sans-serif`;
+                ctx.textAlign = 'left';
+                const name = med.name.length > 14 ? med.name.substring(0,13)+'…' : med.name;
+                ctx.fillText(name, x + Math.round(74*scale), medY);
+
+                const timeW = ctx.measureText(med.time).width + Math.round(36*scale);
+                const timeX = x + cellW - timeW - Math.round(24*scale);
+                ctx.fillStyle = c.badge;
+                ctx.beginPath();
+                ctx.roundRect(timeX, medY - Math.round(18*scale), timeW, Math.round(36*scale), Math.round(18*scale));
+                ctx.fill();
+
+                ctx.fillStyle = c.text;
+                ctx.font = `500 ${Math.round(24*scale)}px "Montserrat", sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.fillText(med.time, timeX + timeW/2, medY + Math.round(5*scale));
+
+                ctx.fillStyle = '#4b5563';
+                ctx.font = `${Math.round(24*scale)}px "Montserrat", sans-serif`;
+                ctx.textAlign = 'left';
+                ctx.fillText(med.dosage, x + Math.round(74*scale), medY + Math.round(30*scale));
+
+                medY += Math.round(58*scale);   // tighter vertical spacing → less empty space
+            });
+        }
+
+        col++;
+        if (col >= 7) { col = 0; row++; }
+    }
+
+    // Footer - positioned higher to ensure it fits and is visible
+    const footerY = gridTop + Math.round(70*scale) + 4 * cellH + Math.round(20*scale);
+
+    ctx.fillStyle = 'rgba(253, 232, 243, 0.35)';
+    roundRect(ctx, margin, footerY, canvas.width - margin*2, Math.round(200*scale), Math.round(32*scale));
+    ctx.fill();
+
+        // Qur'an Ayah (Arabic)
+    // ctx.fillStyle = '#6b21a8';
+    // ctx.font = `${Math.round(45 * scale)}px "Amiri", serif`;
+    // ctx.direction = 'rtl';
+    // ctx.textAlign = 'center';
+    // ctx.fillText(
+    //     'وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ',
+    //     canvas.width / 2,
+    //     footerY + Math.round(195 * scale)
+    // );
+
+    // // Ayah reference
+    // ctx.direction = 'ltr';
+    // ctx.fillStyle = '#9ca3af';
+    // ctx.font = `${Math.round(32 * scale)}px "Inter", sans-serif`;
+    // ctx.fillText(
+    //     '— Qur’an 26:80',
+    //     canvas.width / 2,
+    //     footerY + Math.round(240 * scale)
+    // );
+
+    // English message
+    ctx.fillStyle = '#6b21a8';
+    ctx.font = `italic ${Math.round(48*scale)}px "Playfair Display", serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText(
+        'Every dose is a step towards feeling better.',
+        canvas.width / 2,
+        footerY + Math.round(70 * scale)
+    );
+
+    ctx.fillText(
+        "I'm here with you, always. ♥",
+        canvas.width / 2,
+        footerY + Math.round(125 * scale)
+    );
+
+
+    // ctx.fillStyle = '#6b21a8';
+    // ctx.font = `italic ${Math.round(50*scale)}px "Playfair Display", serif`;
+    // ctx.textAlign = 'center';
+    // ctx.fillText('Every dose is a step towards feeling better.', canvas.width/2, footerY + Math.round(80*scale));
+    // ctx.fillText("I'm here with you, always. ♥", canvas.width/2, footerY + Math.round(145*scale));
+
+    canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'medication-calendar-february-2026.png';
+        a.click();
+        URL.revokeObjectURL(url);
+    }, 'image/png', 1.0);
+
+    // const { jsPDF } = window.jspdf;
+
+    // // A4 landscape in mm
+    // const pdf = new jsPDF({
+    //     orientation: 'landscape',
+    //     unit: 'mm',
+    //     format: 'a4'
+    // });
+
+    // // Convert canvas to high-quality image
+    // const imgData = canvas.toDataURL('image/png', 1.0);
+
+    // // A4 landscape size in mm
+    // const pdfWidth = 297;
+    // const pdfHeight = 210;
+
+    // // Add image to PDF
+    // pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+    // // Save
+    // pdf.save('medication-calendar-february-2026.pdf');
+
+}
+
+function exportReminder() {
+    const canvas = document.getElementById('reminderCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = 1080;
+    canvas.height = 1920;
+
+    const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    grad.addColorStop(0, '#fdfcfc');
+    grad.addColorStop(1, '#f9fafb');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const meds = getMedicationsForDay(currentDate);
+    const dayNum = getDayNumber(currentDate);
+    const dateStr = currentDate.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    });
+
+    ctx.fillStyle = '#2d3748';
+    ctx.font = '400 60px "Playfair Display", serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Medication Course after 29-Jan-2026', canvas.width / 2, 180);
+
+    ctx.fillStyle = '#4a5568';
+    ctx.font = '400 50px "Playfair Display", serif';
+    ctx.fillText(dateStr, canvas.width / 2, 290);
+
+    ctx.fillStyle = '#718096';
+    ctx.font = '500 44px "Montserrat", sans-serif';
+    ctx.fillText(`Day ${dayNum}`, canvas.width / 2, 370);
+
+    const medicineColors = {
+        'Maxinion':   { border: '#4db6ac', badge: 'rgba(77,182,172,0.12)', text: '#0f766e' },
+        'Brotin':     { border: '#ffab91', badge: 'rgba(255,171,145,0.12)', text: '#c2410c' },
+        'Aldactone':  { border: '#b39ddb', badge: 'rgba(179,157,219,0.12)', text: '#6d28d9' },
+        'Diane-35':   { border: '#f9a8d4', badge: 'rgba(249,168,212,0.12)', text: '#be185d' },
+        'default':    { border: '#cbd5e1', badge: 'rgba(203,213,225,0.12)', text: '#4a5568' }
+    };
+
+    let y = 460;
+
+    if (meds.length === 0) {
+        ctx.fillStyle = '#718096';
+        ctx.font = 'italic 56px "Playfair Display", serif';
+        ctx.fillText('No medications scheduled today', canvas.width / 2, y + 120);
+    } else {
+        meds.forEach(med => {
+            const c = medicineColors[med.name] || medicineColors.default;
+
+            ctx.fillStyle = '#fdfefe';
+            ctx.beginPath();
+            ctx.roundRect(80, y, canvas.width - 160, 260, 28);
+            ctx.fill();
+
+            ctx.fillStyle = c.border;
+            ctx.fillRect(100, y + 40, 10, 180);
+
+            // Checkbox
+            ctx.strokeStyle = c.border;
+            ctx.lineWidth = 4.5;
+            ctx.strokeRect(145, y + 90, 50, 50);
+            if (med.taken) {
+                ctx.fillStyle = '#10b981';
+                ctx.font = 'bold 40px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('✔', 170, y + 135);
+            }
+
+            ctx.fillStyle = c.text;
+            ctx.font = '700 52px "Montserrat", sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(med.name, 215, y + 130);
+
+            const timeW = ctx.measureText(med.time).width + 60;
+            ctx.fillStyle = c.badge;
+            ctx.beginPath();
+            ctx.roundRect(canvas.width - 120 - timeW, y + 60, timeW, 55, 28);
+            ctx.fill();
+
+            ctx.fillStyle = c.text;
+            ctx.font = '600 34px "Montserrat", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(med.time, canvas.width - 120 - timeW / 2, y + 100);
+
+            ctx.fillStyle = '#4a5568';
+            ctx.font = '500 38px "Montserrat", sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(med.dosage, 215, y + 195);
+
+            y += 300;
+        });
+    }
+
+    y += 100;
+    ctx.fillStyle = 'rgba(252, 232, 243, 0.45)';
+    ctx.beginPath();
+    ctx.roundRect(80, y, canvas.width - 160, 280, 40);
+    ctx.fill();
+
+    ctx.fillStyle = '#5b2c6f';
+    ctx.font = `italic 44px "Playfair Display", serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText('Every dose is a step towards feeling better.', canvas.width / 2, y + 110);
+    ctx.fillText("I'm here with you, always. ♥", canvas.width / 2, y + 200);
+
+    canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `daily-care-day${dayNum}-${getDateKey(currentDate)}.png`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }, 'image/png', 1.0);
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x+r, y);
+    ctx.lineTo(x+w-r, y);
+    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    ctx.lineTo(x+w, y+h-r);
+    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    ctx.lineTo(x+r, y+h);
+    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    ctx.lineTo(x, y+r);
+    ctx.quadraticCurveTo(x, y, x+r, y);
+    ctx.closePath();
+}
+
+// Initialize
+updateDisplay();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</body>
+</html>
