@@ -84,6 +84,49 @@
         .checkbox { width:22px; height:22px; border:2.5px solid #cbd5e0; border-radius:6px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
         .checkbox.checked { background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%); border-color:#11998e; }
         .checkbox.checked::after { content:'✓'; color:white; font-size:14px; font-weight:bold; }
+        @media (max-width: 768px) {
+            .container { padding: 16px 12px; }
+            .header { padding: 20px 12px; border-radius: 12px; }
+            .title { font-size: 2.1rem; margin-bottom: 8px; }
+            .subtitle { font-size: 1rem; letter-spacing: 1.5px; }
+            .header-buttons { flex-direction: column; gap: 12px; }
+            .header-btn {
+                width: 100%;
+                max-width: 360px;
+                padding: 14px 20px;
+                font-size: 1.05rem;
+            }
+            .calendar {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                background: transparent;
+                border: none;
+            }
+            .day-header { display: none; }
+            .day-cell {
+                min-height: 140px;
+                padding: 12px;
+                border-radius: 12px;
+                box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            }
+            .day-number { font-size: 2rem; }
+            .day-counter { font-size: 0.9rem; }
+            .period-marker {
+                font-size: 0.82rem;
+                padding: 5px 10px;
+                right: 8px;
+            }
+            .period-marker.pd { top: 8px; }
+            .period-marker.dd { top: 34px; }
+            .med-item {
+                font-size: 0.94rem;
+                padding: 10px;
+                gap: 8px;
+            }
+            .checkbox { width: 24px; height: 24px; }
+            .modal-content { padding: 20px; width: 96%; }
+            .add-med-btn, .save-edit-btn { padding: 14px; font-size: 1rem; }
+        }
         .auto-save {
             position:fixed; bottom:30px; right:30px; background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%);
             color:white; padding:16px 28px; border-radius:50px; opacity:0; transition:opacity 0.3s; pointer-events:none;
