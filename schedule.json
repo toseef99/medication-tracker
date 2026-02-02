@@ -1,0 +1,1673 @@
+{
+  "medicationData": {
+    "2026-01-30": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-01-30"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-01-30"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-01-30"
+      }
+    ],
+    "2026-01-31": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-01-31"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-01-31"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-01-31"
+      }
+    ],
+    "2026-02-01": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "9:15PM",
+        "id": "max-2026-02-01"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-01"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-01"
+      }
+    ],
+    "2026-02-02": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-02"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-02"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-02"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-02"
+      }
+    ],
+    "2026-02-03": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-03"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-03"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-03"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-03"
+      }
+    ],
+    "2026-02-04": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-04"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-04"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-04"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-04"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-04"
+      }
+    ],
+    "2026-02-05": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-05"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-05"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-05"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-05"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-05"
+      }
+    ],
+    "2026-02-06": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-06"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-06"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-06"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-06"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-06"
+      }
+    ],
+    "2026-02-07": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-07"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "½ tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-07"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-07"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-07"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-07"
+      }
+    ],
+    "2026-02-08": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-08"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-08"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-08"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-08"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-08"
+      }
+    ],
+    "2026-02-09": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-09"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-09"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-09"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-09"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-09"
+      }
+    ],
+    "2026-02-10": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-10"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-10"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-10"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-10"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-10"
+      }
+    ],
+    "2026-02-11": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-11"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-11"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-11"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-11"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-11"
+      }
+    ],
+    "2026-02-12": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-12"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-12"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-12"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-12"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-12"
+      }
+    ],
+    "2026-02-13": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-13"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-13"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-13"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-13"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-13"
+      }
+    ],
+    "2026-02-14": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-14"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-14"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-14"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-14"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-14"
+      }
+    ],
+    "2026-02-15": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-15"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-15"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-15"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-15"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-15"
+      }
+    ],
+    "2026-02-16": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-16"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "10AM",
+        "id": "bro-morn-2026-02-16"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-16"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-16"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-16"
+      }
+    ],
+    "2026-02-17": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-17"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-17"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-17"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-17"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-17"
+      }
+    ],
+    "2026-02-18": [
+      {
+        "name": "Maxinion",
+        "dosage": "10mg",
+        "time": "8PM",
+        "id": "max-2026-02-18"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-18"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-18"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-18"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-18"
+      }
+    ],
+    "2026-02-19": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-19"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-19"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-19"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-19"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-19"
+      }
+    ],
+    "2026-02-20": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-20"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-20"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-20"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-20"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-20"
+      }
+    ],
+    "2026-02-21": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-21"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-21"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-21"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-21"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-21"
+      }
+    ],
+    "2026-02-22": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-22"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-22"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-22"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-22"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-22"
+      }
+    ],
+    "2026-02-23": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-23"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-23"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-23"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-23"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-23"
+      }
+    ],
+    "2026-02-24": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-24"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-24"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-24"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-24"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "dia-2026-02-24"
+      }
+    ],
+    "2026-02-25": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-25"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-25"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-25"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-25"
+      }
+    ],
+    "2026-02-26": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-26"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-26"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-26"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-26"
+      }
+    ],
+    "2026-02-27": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-27"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-27"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-27"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-27"
+      }
+    ],
+    "2026-02-28": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-02-28"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-02-28"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-02-28"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-02-28"
+      }
+    ],
+    "2026-03-01": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-01"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-01"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-01"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-01"
+      }
+    ],
+    "2026-03-02": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-02"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-02"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-02"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-02"
+      }
+    ],
+    "2026-03-03": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-03"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-03"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-03"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-03"
+      }
+    ],
+    "2026-03-04": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-04"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-04"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-04"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-04"
+      }
+    ],
+    "2026-03-05": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-05"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-05"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-05"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-05"
+      }
+    ],
+    "2026-03-06": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-06"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-06"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-06"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-06"
+      }
+    ],
+    "2026-03-07": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-07"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-07"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-07"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-07"
+      }
+    ],
+    "2026-03-08": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-08"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-08"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-08"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-08"
+      }
+    ],
+    "2026-03-09": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-09"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-09"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-09"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-09"
+      }
+    ],
+    "2026-03-10": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-10"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-10"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-10"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-10"
+      }
+    ],
+    "2026-03-11": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-11"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-11"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-11"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-11"
+      }
+    ],
+    "2026-03-12": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-12"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-12"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-12"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-12"
+      }
+    ],
+    "2026-03-13": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-13"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-13"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-13"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-13"
+      }
+    ],
+    "2026-03-14": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-14"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-14"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-14"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-14"
+      }
+    ],
+    "2026-03-15": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-15"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-15"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-15"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-15"
+      }
+    ],
+    "2026-03-16": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-16"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-16"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-16"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-16"
+      }
+    ],
+    "2026-03-17": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-17"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-17"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-17"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-17"
+      }
+    ],
+    "2026-03-18": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-18"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-18"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-18"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-18"
+      }
+    ],
+    "2026-03-19": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-19"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-19"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-19"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-19"
+      }
+    ],
+    "2026-03-20": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-20"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-20"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-20"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-20"
+      }
+    ],
+    "2026-03-21": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-21"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-21"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-21"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-21"
+      }
+    ],
+    "2026-03-22": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-22"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-22"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-22"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-22"
+      }
+    ],
+    "2026-03-23": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-23"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-23"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-23"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-23"
+      }
+    ],
+    "2026-03-24": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-24"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-24"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-24"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-24"
+      }
+    ],
+    "2026-03-25": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-25"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-25"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-25"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-25"
+      }
+    ],
+    "2026-03-26": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-26"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-26"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-26"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-26"
+      }
+    ],
+    "2026-03-27": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-27"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-27"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-27"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-27"
+      }
+    ],
+    "2026-03-28": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-28"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-28"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-28"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-28"
+      }
+    ],
+    "2026-03-29": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-29"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-29"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-29"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-29"
+      }
+    ],
+    "2026-03-30": [
+      {
+        "name": "Maxinion",
+        "dosage": "30mg",
+        "time": "8PM",
+        "id": "max-2026-03-30"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "5AM",
+        "id": "bro-morn-2026-03-30"
+      },
+      {
+        "name": "Brotin",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "bro-night-2026-03-30"
+      },
+      {
+        "name": "Aldactone",
+        "dosage": "½ tab = 50mg",
+        "time": "8PM",
+        "id": "ald-2026-03-30"
+      }
+    ]
+  },
+  "checkboxStates": {}
+}
