@@ -81,23 +81,7 @@
         }
         .auto-save.show { opacity:1; }
         .empty-day { text-align:center; color:#cbd5e0; font-style:italic; padding:30px 0; }
-        @media (max-width: 768px) {
-            .title                { font-size: 2.4rem; }
-            .subtitle             { font-size: 1.1rem; letter-spacing: 2px; }
-            .header-buttons       { flex-direction: column; gap: 12px; }
-            .header-btn           { padding: 14px 32px; font-size: 1.05rem; width: 100%; max-width: 360px; }
-            .calendar             { grid-template-columns: 1fr; gap: 16px; background: transparent; border: none; }
-            .day-header           { display: none; } /* hide weekday names on small screens */
-            .day-cell             { min-height: 180px; padding: 14px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-            .day-number           { font-size: 2.2rem; }
-            .day-counter          { font-size: 0.85rem; }
-            .med-item             { font-size: 0.95rem; padding: 12px; }
-            .checkbox             { width: 26px; height: 26px; }
-            .period-marker        { font-size: 0.75rem; padding: 5px 10px; right: 10px; }
-            .period-marker.dd     { top: 38px; } /* adjust position on small screens */
-            .modal-content        { padding: 20px; width: 96%; max-height: 90vh; }
-        }
-            </style>
+    </style>
 </head>
 <body>
 
@@ -139,14 +123,6 @@
 // ────────────────────────────────────────────────
 //  Configuration
 // ────────────────────────────────────────────────
-
-// Safe creation – avoids timezone offset issues
-// ────────────────────────────────────────────────
-//  Configuration – using UTC-safe date creation
-// ────────────────────────────────────────────────
-const PD_START = new Date(Date.UTC(2026, 1, 2, 0, 0, 0));   // Feb 2, 2026 = PD-S
-const DD_START = new Date(Date.UTC(2026, 1, 4, 0, 0, 0));   // Feb 4, 2026 = DD-1
-
 const LOCAL_KEY_MEDS  = 'medicationData_v3';
 const LOCAL_KEY_CHECK = 'checkboxStates_v3';
 const REMOTE_FILE     = 'schedule.json';
@@ -166,10 +142,6 @@ let medicationData  = JSON.parse(localStorage.getItem(LOCAL_KEY_MEDS))  || {};
 let checkboxStates  = JSON.parse(localStorage.getItem(LOCAL_KEY_CHECK)) || {};
 let isEditMode      = false;
 let currentEditDate = null;
-
-// Debug: show what date the code thinks PD-S is
-console.log("PD-S date:", PD_START.toDateString());         // should print: Mon Feb 02 2026
-console.log("DD-1 date:", DD_START.toDateString());         // should print: Wed Feb 04 2026
 
 // ─── One-time auto-load from shared schedule.json when local is empty ───
 if (Object.keys(medicationData).length === 0) {
@@ -198,33 +170,6 @@ function saveMedicationData() {
 function getDayNumber(date) {
     const dayOne = new Date(2026, 0, 31); // Jan 31 = Day 1
     return Math.floor((date - dayOne) / 86400000) + 1;
-}
-
-function getPDLabel(dateKey) {
-    // dateKey is in YYYY-MM-DD format → guaranteed date-only
-    const [year, month, day] = dateKey.split('-').map(Number);
-    const inputDate = new Date(Date.UTC(year, month - 1, day));  // midnight UTC
-
-    const pdStartUTC = new Date(Date.UTC(2026, 1, 2));           // Feb 2, 2026 UTC
-
-    const diffMs = inputDate - pdStartUTC;
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-    if (diffDays < 0 || diffDays > 20) return null;
-    return diffDays === 0 ? 'PD-S' : `PD-${diffDays + 1}`;
-}
-
-function getDDLabel(dateKey) {
-    const [year, month, day] = dateKey.split('-').map(Number);
-    const inputDate = new Date(Date.UTC(year, month - 1, day));
-
-    const ddStartUTC = new Date(Date.UTC(2026, 1, 4));           // Feb 4, 2026 UTC
-
-    const diffMs = inputDate - ddStartUTC;
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-    if (diffDays < 0 || diffDays > 20) return null;
-    return `DD-${diffDays + 1}`;
 }
 
 function toggleCheckbox(medId) {
@@ -390,15 +335,6 @@ function renderCalendar() {
     for (let d=1; d<=28; d++) {
         const date = new Date(2026, 1, d);
         const key = date.toISOString().split('T')[0];
-        if (key === '2026-02-02') {
-            console.log("Feb 2 key:", key, "→ label:", getPDLabel(key));
-        }
-        if (key === '2026-02-03') {
-            console.log("Feb 3 key:", key, "→ label:", getPDLabel(key));
-        }
-        if (key === '2026-02-04') {
-            console.log("Feb 4 key:", key, "→ PD:", getPDLabel(key), "DD:", getDDLabel(key));
-        }
         const meds = medicationData[key] || [];
         const dayNum = getDayNumber(date);
         const click = isEditMode ? `onclick="openEditModal('${key}')"` : '';
@@ -406,19 +342,16 @@ function renderCalendar() {
         html += `<div class="day-cell" ${click}>`;
         if (isEditMode) html += `<div class="edit-indicator">EDIT</div>`;
 
-        // TEMP DEBUG: force text on every cell so we see which day gets what
-        html += `<div style="position:absolute; top:80px; left:10px; color:red; font-weight:bold; font-size:1.1rem; background:white; padding:4px; border:1px solid red; z-index:10;">
-        Day ${d} — key:${key} — PD:${pdLabel || '-'} — DD:${ddLabel || '-'}
-        </div>`;
-
-        // PD & DD markers
-        const pdLabel = getPDLabel(key);
-        const ddLabel = getDDLabel(key);
-        if (pdLabel || ddLabel) {
-            let markers = [];
-            if (pdLabel) markers.push(`<div class="period-marker pd">${pdLabel}</div>`);
-            if (ddLabel) markers.push(`<div class="period-marker dd">${ddLabel}</div>`);
-            html += markers.join('');
+        // TEMP: forced markers — direct date check
+        if (key === '2026-02-02') {
+            html += '<div class="period-marker pd">PD-S</div>';
+        }
+        if (key === '2026-02-03') {
+            html += '<div class="period-marker pd">PD-2</div>';
+        }
+        if (key === '2026-02-04') {
+            html += '<div class="period-marker pd">PD-3</div>';
+            html += '<div class="period-marker dd">DD-1</div>';
         }
 
         html += `
