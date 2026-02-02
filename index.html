@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medication Calendar — February 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="data:application/manifest+json,{
+        \"name\": \"Medication Calendar 2026\",
+        \"short_name\": \"MedCal\",
+        \"start_url\": \".\",
+        \"display\": \"standalone\",
+        \"background_color\": \"#f8f9fa\",
+        \"theme_color\": \"#4c5ab8\",
+        \"icons\": [
+            {
+            \"src\": \"https://via.placeholder.com/192?text=MC\",
+            \"sizes\": \"192x192\",
+            \"type\": \"image/png\"
+            }
+        ]
+        }">
 
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -198,7 +213,7 @@ let checkboxStates  = JSON.parse(localStorage.getItem(LOCAL_KEY_CHECK)) || {};
 let isEditMode      = false;
 let currentEditDate = null;
 
-// ─── One-time auto-load from shared schedule.json when local is empty ───
+// One-time auto-load from shared schedule.json when local is empty
 if (Object.keys(medicationData).length === 0) {
     fetch(REMOTE_FILE + '?_=' + Date.now())
         .then(r => r.ok ? r.json() : Promise.reject())
@@ -206,8 +221,23 @@ if (Object.keys(medicationData).length === 0) {
             if (remote?.medicationData) {
                 medicationData = { ...remote.medicationData };
                 localStorage.setItem(LOCAL_KEY_MEDS, JSON.stringify(medicationData));
-                showMessage('Shared schedule loaded');
             }
+            if (remote?.checkboxStates) {                     // ← add this block
+                checkboxStates = { ...remote.checkboxStates };
+                localStorage.setItem(LOCAL_KEY_CHECK, JSON.stringify(checkboxStates));
+            }
+            if (remote?.pdStartDate) {                        // optional
+                pdStartDate = remote.pdStartDate;
+                localStorage.setItem('pdStartDate', pdStartDate);
+            }
+
+            // ─── ADD THE MESSAGE HERE ───
+            if (Object.keys(checkboxStates).length > 0) {
+                showMessage('Some doses already marked as taken from shared schedule');
+            }
+
+
+            showMessage('Shared schedule & checks loaded');
             renderCalendar();
         })
         .catch(() => renderCalendar());
@@ -361,6 +391,7 @@ function saveEdits() {
 function exportData() {
     const payload = {
         medicationData,
+        checkboxStates,           // ← add this line
         pdStartDate,  // Include PD-S in export
         exported: new Date().toISOString(),
         note: "Medication schedule — February 2026"
@@ -384,6 +415,10 @@ function importData(e) {
             if (data.medicationData) {
                 medicationData = { ...data.medicationData };
                 saveMedicationData();
+            }
+            if (data.checkboxStates) {                        // ← add this
+                checkboxStates = { ...data.checkboxStates };
+                localStorage.setItem(LOCAL_KEY_CHECK, JSON.stringify(checkboxStates));
             }
             if (data.pdStartDate) {
                 pdStartDate = data.pdStartDate;
@@ -444,9 +479,13 @@ function renderCalendar() {
             }
         }
 
+        // Get short month name (e.g. "Feb")
+        const monthName = date.toLocaleDateString('en-US', { month: 'short' });
+
+        // Build the day display with month
         html += `
             <div class="day-header-content">
-                <div class="day-number">${d}</div>
+                <div class="day-number">${monthName} ${d}</div>
                 <div class="day-counter">Day ${dayNum}</div>
             </div>`;
 
