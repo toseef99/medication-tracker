@@ -44,7 +44,7 @@
       {
         "name": "Maxinion",
         "dosage": "30mg",
-        "time": "8:00PM",
+        "time": "5AM",
         "id": "max-2026-02-01"
       },
       {
@@ -110,6 +110,12 @@
         "dosage": "½ tab = 50mg",
         "time": "8PM",
         "id": "ald-2026-02-03"
+      },
+      {
+        "name": "Diane-35",
+        "dosage": "1 tab",
+        "time": "8PM",
+        "id": "m-2026-02-03-ml5dpkrs"
       }
     ],
     "2026-02-04": [
@@ -538,7 +544,7 @@
       {
         "name": "Brotin",
         "dosage": "1 tab",
-        "time": "5AM",
+        "time": "10AM",
         "id": "bro-morn-2026-02-17"
       },
       {
@@ -595,7 +601,7 @@
     "2026-02-19": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-19"
       },
@@ -627,7 +633,7 @@
     "2026-02-20": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-20"
       },
@@ -659,7 +665,7 @@
     "2026-02-21": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-21"
       },
@@ -691,7 +697,7 @@
     "2026-02-22": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-22"
       },
@@ -723,7 +729,7 @@
     "2026-02-23": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-23"
       },
@@ -755,7 +761,7 @@
     "2026-02-24": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-24"
       },
@@ -776,18 +782,12 @@
         "dosage": "½ tab = 50mg",
         "time": "8PM",
         "id": "ald-2026-02-24"
-      },
-      {
-        "name": "Diane-35",
-        "dosage": "1 tab",
-        "time": "8PM",
-        "id": "dia-2026-02-24"
       }
     ],
     "2026-02-25": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-25"
       },
@@ -813,7 +813,7 @@
     "2026-02-26": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-26"
       },
@@ -839,7 +839,7 @@
     "2026-02-27": [
       {
         "name": "Maxinion",
-        "dosage": "30mg",
+        "dosage": "10mg",
         "time": "8PM",
         "id": "max-2026-02-27"
       },
@@ -1681,6 +1681,6 @@
     "ald-2026-02-01": true
   },
   "pdStartDate": "2026-02-01",
-  "exported": "2026-02-02T16:07:55.626Z",
+  "exported": "2026-02-02T16:36:52.949Z",
   "note": "Medication schedule — February 2026"
 }
